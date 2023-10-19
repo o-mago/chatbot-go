@@ -1,0 +1,76 @@
+---
+run:
+  deadline: 30m
+  tests: true
+
+linters-settings:
+  exhaustive:
+    default-signifies-exhaustive: true
+  gci:
+    sections:
+      - standard
+      - default
+      - prefix(github.com)
+      - prefix(github.com/chatbot-go)
+      - blank
+      - dot
+  goimports:
+    local-prefixes: github.com/chatbot-go
+  govet:
+    check-shadowing: true
+  misspell:
+    ignore-words:
+      - essencial
+  tagalign:
+    order:
+      - required
+      - envconfig
+      - json
+      - extensions
+      - validate
+      - example
+    sort: true
+  varnamelen:
+    ignore-decls:
+      - i int
+      - rw http.ResponseWriter
+    ignore-names:
+      - db
+      - fn
+      - id
+      - ok
+      - tc
+      - tt
+      - tx
+      - wg
+    ignore-type-assert-ok: true
+  wrapcheck:
+    ignorePackageGlobs:
+      - "github.com/go-ozzo/ozzo-validation/*"
+
+linters:
+  enable-all: true
+  disable:
+    - cyclop
+    - deadcode # deprecated
+    - depguard
+    - dupl
+    - exhaustivestruct # deprecated
+    - exhaustruct
+    - funlen
+    - gochecknoglobals
+    - godox
+    - goerr113
+    - golint # deprecated
+    - ifshort # deprecated
+    - interfacer # deprecated
+    - ireturn
+    - lll
+    - maintidx
+    - maligned # deprecated
+    - nosnakecase # deprecated
+    - scopelint # deprecated
+    - structcheck # deprecated
+    - tagliatelle
+    - testpackage
+    - varcheck # deprecated
